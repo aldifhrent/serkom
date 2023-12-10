@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Search from "./search";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
     },
     {
       href: `/sign-up`,
-      label: "Register",
+      label: "Sign Up",
       active: pathname === `/sign-up`,
     },
   ];
@@ -31,7 +31,7 @@ const Navbar = () => {
     <header className="p-6">
       <div className="flex justify-between text-center items-center">
         <div className="p-2">
-          <Image src='/blogger.png' alt="Logo" width={40} height={40} />
+          <Image src="/blogger.png" alt="Logo" width={40} height={40} />
         </div>
         <nav className="hidden lg:flex gap-4 items-center text-center justify-center">
           {routes.map((route) => (
@@ -63,7 +63,7 @@ const Navbar = () => {
       <nav
         className={
           nav
-            ? "relative flex flex-col gap-y-1 text-right mt-4 p-4 text-lg text-black/90 cursor-pointer lg:hidden"
+            ? "relative flex flex-col gap-y-1 mt-4 p-4 text-lg text-black/90 cursor-pointer items-center lg:hidden"
             : "hidden"
         }
       >
@@ -81,6 +81,7 @@ const Navbar = () => {
             {route.label}
           </Link>
         ))}
+        <Search/>
       </nav>
     </header>
   );
