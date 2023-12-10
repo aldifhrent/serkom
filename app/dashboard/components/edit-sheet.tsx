@@ -236,8 +236,8 @@ const EditSheet = ({ id }: editSheetProps) => {
                           <SelectItem value="Belum Verifikasi">
                             Belum Verifikasi
                           </SelectItem>
-                          <SelectItem value="Sudah Terverifikasi">
-                            Sudah Terverifikasi
+                          <SelectItem value="Terverifikasi">
+                            Terverifikasi
                           </SelectItem>
                         </SelectContent>
                       </Select>
