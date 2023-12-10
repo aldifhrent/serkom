@@ -1,5 +1,5 @@
 import { axiosInstance } from "@/lib/axios";
-import { Beasiswa } from "@prisma/client";
+import { Beasiswa } from '@prisma/client'
 import { useMutation } from "@tanstack/react-query";
 
 export const useDeleteBeasiswa = () => {
