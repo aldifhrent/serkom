@@ -15,7 +15,7 @@ const SignUpIdPage = ({ params }: SignUpIdProps) => {
   const beasiswa = useFetchRegisterById();
   useEffect(() => {
     async function fetchData() {
-      beasiswa.mutate(params.signUpId);
+      await beasiswa.mutate(params.signUpId);
     }
 
     fetchData();
