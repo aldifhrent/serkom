@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+enum Role {
+  MAHASISWA
+  ADMIN
+}
+
+model Beasiswa {
+  id           String      @id @default(uuid())
+  role         Role @default(MAHASISWA)
+  name         String
+  email        String
+  phoneNumber  String
+  semester     String
+  ipk          String
+  tipeBeasiswa String
+  berkas       String
+  status       String   @default("Belum Verifikasi")
+  createAt     DateTime @default(now())
+  updateAt     DateTime @updatedAt
+}
